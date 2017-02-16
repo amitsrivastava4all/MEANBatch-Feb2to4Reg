@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+    <script>
+        // this is a life cycle function of p5
+    var x = 10;  
+    var y = 100; 
+    var xVelocity= 1;    
+    function setup(){
+        var canWidth = 500;
+        var canHeight= 500;
+        createCanvas(canWidth,canHeight);
+        background('black');
+      //console.log("this is setup call");  
+    }
+        function draw(){
+            background('black');
+            fill('yellow');
+            ellipse(x,y,50,50);
+            if(x>=width-50){
+                xVelocity = random(-20);
+            }
+            else
+            if(x<=0){
+                xVelocity = random(20);
+            }    
+            x = x + xVelocity;
+            //rect(100,100,50,50);
+            //console.log("this is draw call");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
