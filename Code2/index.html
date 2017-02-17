@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script>
+        // this is a life cycle function of p5
+    var x = 10;  
+    var y = 100; 
+    var xVelocity= 1;
+    var yVelocity = 1;   
+    var song ; 
+    var amp; 
+        var slider;
+    var songSpeed = 2;     
+    function setup(){
+        var canWidth = 500;
+        var canHeight= 500;
+        song = loadSound("EkPal.mp3",callMeOnceLoad);
+        createCanvas(canWidth,canHeight);
+        background('black');
+        x = width/2;
+        y = height/2;
+        slider= createSlider(1,10,1,0.1);
+      //console.log("this is setup call");  
+    }
+        function callMeOnceLoad(){
+            song.play();
+            amp = new p5.Amplitude();
+        }
+    // SRP     
+    function changeDirection(){
+        if(song){
+            song.rate(slider.value());
+            songSpeed = slider.value() * 10;
+            console.log("song Speed ",songSpeed);
+           }
+        if(x>=width-50){
+                xVelocity = random(-songSpeed);
+            }
+            else
+            if(x<=0){
+                xVelocity = random(songSpeed);
+            }
+        else
+            if(y>=height){
+                yVelocity = random(-songSpeed);
+            }
+        else
+        if(y<=0){
+            yVelocity = random(songSpeed);
+        }    
+            x = x + xVelocity;
+            y = y + yVelocity;
+    }    
+        function draw(){
+            background('black');
+            fill(random(x+10),random(y+10),100);
+            if(amp){
+            console.log("Amp "+amp.getLevel());
+            ellipse(x,y,amp.getLevel()*100+50,50);    
+            }
+            else{
+                ellipse(x,y,50,50);
+            }
+                changeDirection();
+            //rect(100,100,50,50);
+            //console.log("this is draw call");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
