@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ITEM - CRUD</title>
+	<link rel="stylesheet" href="css/design.css">
+	<script src="js/items.js"></script>
 </head>
 <body>
 <fieldset>
@@ -10,7 +12,7 @@
 	<table>
 		<tr>
 			<td><label for="">ItemNo</label></td>
-			<td><label for="">1</label></td>
+			<td><label for="" id="itemno">1</label></td>
 		</tr>
 		<tr>
 			<td><label for="">Name</label></td>
@@ -38,7 +40,7 @@
 			<td colspan="2">
 				<table>
 					<tr>
-						<td><button>Add</button></td>
+						<td><button id="addBt">Add</button></td>
 						<td><button>Delete</button></td>
 						<td><button>Search</button></td>
 						<td><button>Update</button></td>
@@ -63,6 +65,7 @@
 			<th>Desc</th>
 			<th>Price</th>
 			<th>Quantity</th>
+			<th>Operations</th>
 			
 		</tr>
 		</thead>
