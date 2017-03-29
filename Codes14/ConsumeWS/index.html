@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="p5.min.js"></script>
+	<script src="imagesearch.js"></script>
+	<script src="weather.js"></script>
+	<script src="currency.js">
+	
+		</script>
+</head>
+<body>
+Base Currency USD
+	<select  id="currency">
+		<option >INR</option>
+		<option >AUD</option>
+		<option >EUR</option>
+	</select>
+	<h1>Rates are <span id="rate"></span></h1>
+	
+	<br>
+	<select id="country">
+		<option>USA</option>
+		<option>UK</option>
+		<option>IN</option>
+	</select>
+	<select id="city">
+		<option>Newyork</option>
+		<option>London</option>
+		<option>Delhi</option>
+	</select>
+	<h1>Weather <span id="weatherresult"></span></h1>
+	<input type="text" id="searchTxt" placeholder="Type to Search">
+	<div id="imageResult">
+		
+	</div>
+</body>
+</html>
